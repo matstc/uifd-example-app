@@ -11,7 +11,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= button_to '↑', upvote_path(post) %><%= post.title %></td>
+        <td><%= button_to '↑', upvote_path(post), remote:true %><%= post.title %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
