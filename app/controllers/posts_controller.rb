@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  def upvote
+    @post = Post.find params[:id]
+    @post.upvote
+    @post.save
+  end
+
   # GET /posts
   # GET /posts.json
   def index
