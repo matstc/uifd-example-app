@@ -5,6 +5,8 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
     @post.upvote
     @post.save
+
+    render inline: 'OK'
   end
 
   # GET /posts
